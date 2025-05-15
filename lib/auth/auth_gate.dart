@@ -1,9 +1,10 @@
+import 'package:auth/auth/pages/login_page.dart';
+import 'package:auth/auth/pages/profilepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../pages/login_page.dart';
-import '../pages/profilepage.dart';
+
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -25,7 +26,7 @@ class AuthGate extends StatelessWidget {
           //check if there is a valid session currently
           final session=snapshot.hasData?snapshot.data!.session:null;
           if(session!=null){
-           return Profilepage();
+           return Profile();
           }
           else{
             return LoginPage();
